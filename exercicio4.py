@@ -1,46 +1,13 @@
-while True:
-    numero_1 = input('Digite um número: ')
-    numero_2 = input('Digite outro número: ')
-    operador = input('Digite o operador (+-/*): ')
+nome = input("Digite seu nome: ")
+idade = input("Digite sua idade: ")
 
-    numero_validos = None
-    num_1_float = 0
-    num_2_float = 0
+if idade:
+    idade_int = int(idade)
 
-    try:
-        num_1_float = float(numero_1)
-        num_2_float = float(numero_2)
-        numeros_validos = True
-    except:
-        numero_validos = None
+espacos = nome.count(' ')
 
-    if numeros_validos is None:
-        print('Um ou ambos os números digitados são inválidos')
-        continue
-    
-    operadores_perm = '+-/*'
-
-    if operador not in operadores_perm: 
-        print('Operador inválido')
-        continue
-
-    if len(operador) < 1:
-        print('Digite apenas um operador.')
-        continue
-    
-    print('Realizando sua conta. Confira o resultado abaixo: ')
-    if operador == '+':
-        print('A soma dos número é: ', num_1_float + num_2_float)
-    elif operador == '-':  
-        print('A soma dos número é: ', num_1_float - num_2_float)
-    elif operador == '/':  
-        print('A soma dos número é: ', num_1_float / num_2_float)
-    elif operador == '*':  
-        print('A soma dos número é: ', num_1_float * num_2_float)
-    else:
-        print('Não deveria ter entrado aqui.')
-
-    sair = input('Quer sair? [s]Sim: ').lower().startswith('s')
-    
-    if sair is True:
-        break
+if nome and idade: 
+    print(f'{nome}, seu nome invertido é {nome[::-1]} seu nome tem {espacos} espaços e no total tem {len(nome)} letras. '
+          f'A primeira letra do seu nome é {nome[0].upper()} e a última é {nome[-1].upper()}')
+else: 
+    print('Desculpe, você deixou campos vazios.')

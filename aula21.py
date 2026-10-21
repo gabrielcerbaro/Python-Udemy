@@ -1,25 +1,10 @@
-# Operadores lógicos
-# and (e) or (ou) not (não)
-# or - Qualquer condição verdadeira avalia
-# toda a expressão como verdadeira.
-# Se qualquer valor for considerado verdadeiro,
-# a expressão inteira será avaliada naquele valor.
-# São considerados falsy (que vc já viu)
-# 0 0.0 '' False
-# Também existe o tipo None que é
-# usado para representar um não valor
+# Resumo: Solicita uma senha, compara com a senha permitida e demonstra o uso do operador lógico 'not'.
+senha = input("Senha: ")
 
-entrada = input('[E]ntrar [S]air: ')
-# Resumo: Demonstra operadores lógicos (or/and) em um fluxo de autenticação simples e usa curto-circuito com 'or' para senha padrão.
-senha_digitada = input('Senha: ')
+if not senha == "123456":
+    print('Senha incorreta')
+else: 
+    print('Senha correta')
 
-senha_permitida = '123456'
-
-if (entrada == 'E' or entrada == 'e') and senha_digitada == senha_permitida:
-    print('Entrar')
-else:
-    print('Sair')
-
-# Avaliação de curto circuito
-senha = input('Senha: ') or 'Sem senha'
-print(senha)
+# print(not True) # False
+# print(not False) # True

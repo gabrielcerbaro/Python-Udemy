@@ -1,15 +1,7 @@
-nome = 'Gabriel'
+primeiro_valor = input("Digite o primeiro valor: ")
+segundo_valor = input("Digite o segundo valor: ")
 
-tam_nome = len(nome)
-
-indice = 0
-novo_nome = ''
-
-while indice < len(nome):
-    letra = nome[indice]
-    novo_nome += f'*{letra}'
-    indice += 1
-
-novo_nome += '*'
-
-print(novo_nome)
+if primeiro_valor >= segundo_valor:
+    print(f"O {primeiro_valor=} é maior ou igual ao {segundo_valor=}.")
+else:
+    print(f"O {segundo_valor=} é maior que o {primeiro_valor=}.")
