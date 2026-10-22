@@ -1,33 +1,57 @@
-import os
+"""
+Faça um programa que peça ao usuário para digitar um número inteiro,
+informe se este número é par ou ímpar. Caso o usuário não digite um número
+inteiro, informe que não é um número inteiro.
+"""
 
-palavra_secreta = 'corinthians'
-letras_acertadas = ''
-tentativas = 0
+# numero = input("Digite um número inteiro: ")
 
-while True:
+# if numero.isdigit():
+#     numero_int = int(numero)
+#     if numero_int % 2 == 0:
+#         print(f'O número {numero_int} é par.')
+#     else:
+#         print(f'O número {numero_int} é ímpar')
+# else:
+#     print('O valor digitado não é um número inteiro')
 
-    letra_digitada = input('Digite uma letra: ')
-    tentativas += 1
+"""
+Faça um programa que pergunte a hora ao usuário e, baseando-se no horário 
+descrito, exiba a saudação apropriada. Ex. 
+Bom dia 0-11, Boa tarde 12-17 e Boa noite 18-23.
+"""
 
-    if len(letra_digitada) > 1:
-        print('Digite apenas uma letra.')
-        continue
+# hora = input('Insira uma hora em formato de número inteiro positivo: ')
 
-    if letra_digitada in palavra_secreta:
-        letras_acertadas += letra_digitada
+# try:
+#     hora_int = int(hora)
 
-    palavra_formada = ''
-    for letra_secreta in palavra_secreta:
-        if letra_secreta in letras_acertadas:
-            palavra_formada += letra_secreta
-        else:
-            palavra_formada += '*'
-    
-    print('Palavra formada: ', palavra_formada)
+#     if hora_int >= 0 and hora_int <= 11:
+#         print(f'Bom dia, ainda são {hora_int}h')
+#     elif hora_int >= 12 and hora_int <= 17:
+#         print(f'Boa tarde, já são {hora_int}h')
+#     elif hora_int >= 18 and hora_int <= 23:
+#         print(f'Boa noite, são {hora_int}h')
+#     else:
+#         print('Não conheço esse horário')
+# except:
+#     print(f'O valor: {hora} não é um valor real, por gentileza, informar um número inteiro positivo')
 
-    if palavra_formada == palavra_secreta:
-        os.system('cls')
-        print('Você ganhou!')
-        print('A palavra secreta era:', palavra_secreta)
-        print('Tentativas:', tentativas)
-        break
+"""
+Faça um programa que peça o primeiro nome do usuário. Se o nome tiver 4 letras ou 
+menos escreva "Seu nome é curto"; se tiver entre 5 e 6 letras, escreva 
+"Seu nome é normal"; maior que 6 escreva "Seu nome é muito grande". 
+"""
+
+nome = input('Qual o seu primeiro nome: ')
+qtd_letras_nome = len(nome)
+
+if qtd_letras_nome > 1:
+    if qtd_letras_nome <= 4:
+        print('O seu nome é curto')
+    elif qtd_letras_nome <= 6:
+        print('Seu nome é normal')
+    else: 
+        print('Seu nome é muito grande')
+else:
+    print('Coloque um nome real')
